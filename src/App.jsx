@@ -83,7 +83,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen selection:bg-primary/20 flex flex-col font-sans bg-[#f8f9fa] text-[#1a1a1a] scroll-smooth">
+    <div className="min-h-screen overflow-x-hidden selection:bg-primary/20 flex flex-col font-sans bg-[#f8f9fa] text-[#1a1a1a] scroll-smooth">
       {/* Navigation / Header */}
       <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${scrolled ? 'bg-white border-b border-border py-3 shadow-md' : 'bg-white/70 backdrop-blur-md py-5'}`}>
         <div className="max-w-7xl mx-auto px-6 md:px-8 flex justify-between items-center">
@@ -93,7 +93,7 @@ export default function App() {
             </div>
             <div>
               <div className="font-bold text-base leading-none">Shishant Kumar</div>
-              <div className="text-[10px] text-muted font-bold uppercase tracking-widest mt-1 opacity-70">Infrastructure Specialist</div>
+              <div className="text-[10px] text-muted font-bold uppercase tracking-widest mt-1 opacity-70">Ecommerce Systems Specialist</div>
             </div>
           </div>
 
@@ -167,47 +167,62 @@ export default function App() {
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="flex-[1.2]"
             >
-              <span className="accent-tag !px-4 !py-1.5 !rounded-full">Real Systems • No Fluff</span>
+              <span className="accent-tag !px-4 !py-1.5 !rounded-full">Built for, Growing D2C Brands</span>
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight mb-8">
-                The Complete <br />
-                <span className="text-primary italic font-medium">Technical Backbone</span> <br />
-                for D2C Scale
+                I Build & Fix  <br />
+                <span className="text-primary italic font-medium">Ecommerce Systems </span> <br />
+                That Actually Work
               </h1>
               <p className="text-lg md:text-xl text-muted max-w-2xl leading-relaxed mb-10 opacity-80">
-                Enterprise-grade Shopify infrastructure, automated supply chain integrations, and bulletproof payment workflows. Engineered for 99.9% operational stability.
+                From Shopify setup to payments, shipping, and automation — I make sure your entire backend runs smoothly so you can focus on growing your business without tech headaches.
               </p>
               <div className="flex flex-wrap gap-4">
                 <a href="#work" onClick={(e) => smoothScroll(e, 'work')} className="cta-btn flex items-center gap-3 !px-8 !py-4 shadow-xl shadow-primary/10 hover:shadow-primary/30 group">
                   Systems Portfolio <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
                 </a>
-                <a href="#contact" onClick={(e) => smoothScroll(e, 'contact')} className="cta-outline !px-8 !py-4 hover:border-primary/40">Audit My Store</a>
+                <a href="#contact" onClick={(e) => smoothScroll(e, 'contact')} className="cta-outline !px-8 !py-4 hover:border-primary/40">Get Free Audit</a>
               </div>
             </motion.div>
 
-            <div className="flex-1 hidden lg:grid grid-cols-2 gap-6 relative">
-              <div className="absolute -top-10 -right-10 w-40 h-40 bg-primary/5 rounded-full blur-3xl -z-10 animate-pulse"></div>
+            <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-6 relative max-w-full">
+
+              {/* Background glow - fixed */}
+              <div className="hidden sm:block absolute -top-10 right-0 w-32 h-32 md:w-40 md:h-40 bg-primary/5 rounded-full blur-3xl -z-10 animate-pulse"></div>
+
               <motion.div
                 whileHover={{ y: -5 }}
-                className="card bg-white border-2 border-border/50 p-8"
+                className="card bg-white border-2 border-border/50 p-6 md:p-8 w-full"
               >
-                <div className="text-[10px] font-bold text-muted uppercase tracking-[0.2em] mb-4">Infrastructure Needs</div>
+                <div className="text-[10px] font-bold text-muted uppercase tracking-[0.2em] mb-4">
+                  What I Help With
+                </div>
+
                 <div className="space-y-4">
-                  {['Zero to One Setup', 'System Audit', 'API Cleanup', 'Automation'].map(item => (
+                  {[
+                    'Launch Your Store from Scratch',
+                    'Fix Broken Systems',
+                    'Improve Speed & Conversions',
+                    'Automate Daily Operations'
+                  ].map(item => (
                     <div key={item} className="flex items-center gap-3 text-sm font-semibold">
-                      <CheckCircle2 size={16} className="text-primary" />
-                      {item}
+                      <CheckCircle2 size={16} className="text-primary shrink-0" />
+                      <span className="break-words">{item}</span>
                     </div>
                   ))}
                 </div>
               </motion.div>
+
               <motion.div
                 whileHover={{ y: -5 }}
-                className="card border-primary/20 bg-primary/5 p-8 flex flex-col justify-end"
+                className="card border-primary/20 bg-primary/5 p-6 md:p-8 flex flex-col justify-end w-full"
               >
-                <Database className="text-primary mb-4" size={32} />
-                <div className="text-xl font-bold mb-2">99.9% Uptime</div>
-                <p className="text-xs text-muted leading-relaxed font-medium">Failsafe delivery integrations and automated backend loops.</p>
+                <Database className="text-primary mb-4 shrink-0" size={32} />
+                <div className="text-xl font-bold mb-2">Reliable & Stable Systems</div>
+                <p className="text-xs text-muted leading-relaxed font-medium break-words">
+                  Systems built to handle real orders, traffic, and growth without breaking.
+                </p>
               </motion.div>
+
             </div>
           </div>
         </section>
@@ -218,7 +233,7 @@ export default function App() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-20">
               {/* Stack Detail */}
               <div className="lg:col-span-4 self-start lg:sticky lg:top-32">
-                <h3 className="text-3xl font-bold mb-8">Deployment <br />Capabilities</h3>
+                <h3 className="text-3xl font-bold mb-8">What I Can Set Up For You</h3>
                 <p className="text-muted text-sm mb-10 leading-relaxed max-w-sm">Every brand needs a robust engine. I implement the following system components with absolute precision.</p>
                 <div className="space-y-1">
                   {CORE_AREAS.map((area, idx) => (
@@ -233,8 +248,8 @@ export default function App() {
               {/* Architecture Flow */}
               <div id="systems" className="lg:col-span-8">
                 <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-12 gap-4">
-                  <h3 className="text-3xl font-bold">The Infrastructure Lifecycle</h3>
-                  <div className="px-4 py-1 bg-[#f1f5f9] rounded-full text-[10px] font-bold text-muted uppercase tracking-[0.2em]">Operational Blueprint</div>
+                  <h3 className="text-3xl font-bold">How Your Store Works Behind the Scenes</h3>
+                  <div className="px-4 py-1 bg-[#f1f5f9] rounded-full text-[10px] font-bold text-muted uppercase tracking-[0.2em]">Simple Flow</div>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -269,10 +284,10 @@ export default function App() {
 
                 <div className="mt-12 p-8 bg-ink rounded-2xl text-white flex flex-col md:flex-row items-center justify-between gap-8">
                   <div>
-                    <h4 className="text-xl font-bold mb-2">Need a Custom Interface?</h4>
-                    <p className="text-white/60 text-sm">I develop headless Shopify front-ends using Hydrogen / Oxygen for peak performance.</p>
+                    <h4 className="text-xl text-white font-bold mb-2">Need a Faster Store Experience?</h4>
+                    <p className="text-white/60 text-sm">I can also build fast, custom storefronts for better speed, performance, and conversions.</p>
                   </div>
-                  <a href="#contact" onClick={(e) => smoothScroll(e, 'contact')} className="cta-btn !bg-white !text-ink whitespace-nowrap !px-8">Get Expert Advice</a>
+                  <a href="#contact" onClick={(e) => smoothScroll(e, 'contact')} className="cta-btn !bg-white !text-ink whitespace-nowrap !px-8">Talk to Me</a>
                 </div>
               </div>
             </div>
@@ -284,8 +299,8 @@ export default function App() {
           <div className="max-w-7xl mx-auto px-6 md:px-8">
             <div className="flex flex-col md:flex-row md:justify-between md:items-end mb-16 gap-8 text-center md:text-left">
               <div>
-                <h3 className="text-4xl font-bold mb-3 tracking-tighter">Production-Grade Implementations</h3>
-                <p className="text-muted font-medium">Real stores. Real traffic. Real stability.</p>
+                <h3 className="text-4xl font-bold mb-3 tracking-tighter">Real Work. Real Results.</h3>
+                <p className="text-muted font-medium">Live ecommerce stores I’ve built or optimized for performance, automation, and reliability.</p>
               </div>
               <div className="flex justify-center gap-3">
                 <span className="flex items-center gap-2 text-xs font-bold text-muted bg-white border border-border px-4 py-2 rounded-full">
@@ -332,17 +347,17 @@ export default function App() {
         <section id="process" className="py-24 bg-white border-y border-border overflow-hidden">
           <div className="max-w-7xl mx-auto px-6 md:px-8">
             <div className="text-center mb-20">
-              <span className="accent-tag !mx-auto">Engineering Phase</span>
-              <h3 className="text-4xl font-bold mt-4">Calculated Execution</h3>
+              <span className="accent-tag !mx-auto">Simple Process Flow</span>
+              <h3 className="text-4xl font-bold mt-4">How I Work</h3>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 relative">
               <div className="hidden lg:block absolute top-[25px] left-32 right-32 h-[1px] bg-border -z-10"></div>
               {[
-                { title: "Audit", desc: "Technical system mapping" },
-                { title: "Blueprint", desc: "Scalable architecture plan" },
-                { title: "Deploy", desc: "Production implementation" },
-                { title: "Stabilize", desc: "Failsafe testing & handover" }
+                { title: "Understand", desc: "Analyze your current setup & issues" },
+                { title: "Plan", desc: "Create a simple and scalable solution" },
+                { title: "Build", desc: "Implement everything properly" },
+                { title: "Support", desc: "Test, fix, and ensure smooth operations" }
               ].map((step, idx) => (
                 <div key={idx} className="flex flex-col items-center text-center group">
                   <div className="w-14 h-14 rounded-full bg-white border-2 border-border flex items-center justify-center font-bold text-lg group-hover:border-primary group-hover:bg-primary group-hover:text-white transition-all mb-6">
@@ -362,24 +377,24 @@ export default function App() {
           <div className="max-w-7xl mx-auto px-6 md:px-8 relative">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
               <div>
-                <span className="accent-tag">Deployment Window Open</span>
-                <h2 className="text-5xl md:text-6xl font-bold mb-8 leading-tight tracking-tighter">Ready for a <br /> System Upgrade?</h2>
+                <span className="accent-tag">Let’s Work Together</span>
+                <h2 className="text-5xl md:text-6xl font-bold mb-8 leading-tight tracking-tighter">Let’s Fix Your Store Backend</h2>
                 <p className="text-xl text-muted leading-relaxed mb-12 max-w-lg">
-                  Submit your brand details for a complimentary 15-minute infrastructure audit. Let's find your technical roadblocks.
+                  Tell me about your store, and I’ll show you exactly what’s slowing it down — and how to fix it.
                 </p>
 
                 <div className="flex gap-12">
                   <div>
-                    <div className="text-3xl font-bold text-primary mb-1">5+</div>
-                    <div className="text-[10px] font-bold text-muted uppercase tracking-[0.2em]">Years Deep</div>
+                    <div className="text-3xl font-bold text-primary mb-1">4+</div>
+                    <div className="text-[10px] font-bold text-muted uppercase tracking-[0.2em]">Years Experience</div>
                   </div>
                   <div>
                     <div className="text-3xl font-bold text-primary mb-1">11+</div>
-                    <div className="text-[10px] font-bold text-muted uppercase tracking-[0.2em]">Core Systems</div>
+                    <div className="text-[10px] font-bold text-muted uppercase tracking-[0.2em]">Systems Implemented</div>
                   </div>
                   <div>
                     <div className="text-3xl font-bold text-primary mb-1">99.9%</div>
-                    <div className="text-[10px] font-bold text-muted uppercase tracking-[0.2em]">Stability Target</div>
+                    <div className="text-[10px] font-bold text-muted uppercase tracking-[0.2em]">Reliable & Tested Systems</div>
                   </div>
                 </div>
               </div>
@@ -399,6 +414,14 @@ export default function App() {
                 >
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
+                      <label className="block text-[10px] font-black text-muted uppercase tracking-[0.2em] mb-2.5">Full Name</label>
+                      <input type="text" required className="w-full bg-[#f8f9fa] border-2 border-transparent rounded-xl px-5 py-4 text-sm font-semibold focus:border-primary focus:bg-white outline-none transition-all" placeholder="Name" />
+                    </div>
+                    <div>
+                      <label className="block text-[10px] font-black text-muted uppercase tracking-[0.2em] mb-2.5">Phone</label>
+                      <input type="text" required className="w-full bg-[#f8f9fa] border-2 border-transparent rounded-xl px-5 py-4 text-sm font-semibold focus:border-primary focus:bg-white outline-none transition-all" placeholder="Mobile" />
+                    </div>
+                    <div>
                       <label className="block text-[10px] font-black text-muted uppercase tracking-[0.2em] mb-2.5">Brand Name</label>
                       <input type="text" required className="w-full bg-[#f8f9fa] border-2 border-transparent rounded-xl px-5 py-4 text-sm font-semibold focus:border-primary focus:bg-white outline-none transition-all" placeholder="Enter Brand" />
                     </div>
@@ -412,7 +435,7 @@ export default function App() {
                     <textarea className="w-full bg-[#f8f9fa] border-2 border-transparent rounded-xl px-5 py-4 text-sm font-semibold focus:border-primary focus:bg-white outline-none transition-all min-h-[120px] resize-none" placeholder="e.g. Shopify, Shiprocket, Klaviyo..."></textarea>
                   </div>
                   <button type="submit" className="w-full cta-btn !py-5 text-base shadow-xl shadow-primary/20 hover:scale-[1.02] active:scale-[0.98]">
-                    Send Audit Request
+                    Get My Free Audit
                   </button>
                   <div className="text-center">
                     <span className="text-[10px] font-bold text-green-500 uppercase tracking-widest inline-flex items-center gap-2">
@@ -434,18 +457,17 @@ export default function App() {
               <div className="w-12 h-12 bg-primary text-white rounded-xl flex items-center justify-center font-bold text-xl">SK</div>
               <div>
                 <div className="font-bold text-lg leading-none">Shishant Kumar</div>
-                <div className="text-[10px] text-muted font-bold uppercase tracking-widest mt-1 opacity-70">Infrastructure Specialist</div>
+                <div className="text-[10px] text-muted font-bold uppercase tracking-widest mt-1 opacity-70">Ecommerce Systems Specialist</div>
               </div>
             </div>
 
             <div className="flex flex-wrap gap-x-12 gap-y-4 text-[11px] font-bold text-muted uppercase tracking-[0.3em]">
-              <a href="#" className="hover:text-primary transition-colors">LinkedIn</a>
-              <a href="#" className="hover:text-primary transition-colors">Twitter</a>
-              <a href="#" className="hover:text-primary transition-colors">GitHub</a>
+              <a href="https://www.linkedin.com/in/shishant-kumar-a86470286/" className="hover:text-primary transition-colors">LinkedIn</a>
+              <a href="mailto:kumarshishant86@gmail.com" className="hover:text-primary transition-colors">Email</a>
             </div>
 
             <div className="text-[10px] font-bold text-muted opacity-50 uppercase tracking-[0.3em]">
-              &copy; 2024 Build Engine
+              &copy; 2026 Build Engine
             </div>
           </div>
         </div>
